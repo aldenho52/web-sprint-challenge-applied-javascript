@@ -15,9 +15,9 @@ import axios from 'axios'
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
     .then (res => {
-        console.log(res)
+        // console.log(res)
         const tabs = res.data.topics
-        console.log(tabs)
+        // console.log(tabs)
         tabs.forEach(tab => {
             const newTab = document.createElement('div')
             newTab.classList.add('tab')
