@@ -52,7 +52,7 @@ function cardMaker(object) {
     card.addEventListener('click', event => {
         console.log(headline.textContent)
     })
-    
+
     return card
 }
 
@@ -67,33 +67,42 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
 
         bootstrap.forEach(object => {
             const newCard = cardMaker(object)
+            newCard.classList.add('bootstrap')
             const cardContainer = document.querySelector('.cards-container')
             cardContainer.appendChild(newCard)
         })
         javascript.forEach(object => {
             const newCard = cardMaker(object)
+            newCard.classList.add('javascript')
             const cardContainer = document.querySelector('.cards-container')
             cardContainer.appendChild(newCard)
         })
         jquery.forEach(object => {
             const newCard = cardMaker(object)
+            newCard.classList.add('jquery')
             const cardContainer = document.querySelector('.cards-container')
             cardContainer.appendChild(newCard)
         })
         node.forEach(object => {
             const newCard = cardMaker(object)
+            newCard.classList.add('node')
             const cardContainer = document.querySelector('.cards-container')
             cardContainer.appendChild(newCard)
         })
         technology.forEach(object => {
             const newCard = cardMaker(object)
+            newCard.classList.add('technology')
             const cardContainer = document.querySelector('.cards-container')
             cardContainer.appendChild(newCard)
         })
     })
     .catch(err => {
-        console.log(err)
+        const error = document.createElement('p')
+        error.textContent = `${err}, failure to retrieve articles`
+        const errorContainer = document.querySelector('.errors-container')
+        errorContainer.appendChild(error)
     })
+    
 
 
 // Use your function to create a card for each of the articles, and append each card to the DOM.

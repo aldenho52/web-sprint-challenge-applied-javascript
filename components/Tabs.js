@@ -22,6 +22,15 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
             const newTab = document.createElement('div')
             newTab.classList.add('tab')
             newTab.textContent = tab
+            
+
+            // stretch adding filtering tabs
+            newTab.addEventListener('click', event => {
+                
+            })
+            // end of stretch code
+
+
             const topics = document.querySelector('.topics')
             topics.appendChild(newTab)
         })
@@ -29,3 +38,13 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
     .catch(err => {
         console.log(err)
     })
+
+    function tabMaker (text) {
+        const newTab = document.createElement('div')
+        newTab.classList.add('tab')
+        newTab.textContent = text
+        const topics = document.querySelector('.topics')
+        topics.appendChild(newTab)
+    }
+
+    tabMaker('ALL')
