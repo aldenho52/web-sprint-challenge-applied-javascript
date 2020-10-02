@@ -35,6 +35,3 @@ function Header(dateText, temp) {
 const headerContainer = document.querySelector('.header-container')
 const lambdaTimes = Header('MARCH 28, 2020', '98°')
 headerContainer.appendChild(lambdaTimes)
-
-console.log('hello')
-
